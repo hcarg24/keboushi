@@ -1,0 +1,21 @@
+.slideConts {
+  transform: translate(-100px, 0);
+  opacity: 0;
+  transition: all .3s;
+
+  &.active {
+    opacity: 1;
+    transform: translate(0, 0) !important;
+  }
+}
+
+// .slideConts {
+//   opacity: 0;
+//   transition: all .3s;
+//   transform: translate(-45px, 0);
+
+//   &.active {
+//     opacity: 1;
+//     transform: translate(0, 0) !important;
+//   }
+// }

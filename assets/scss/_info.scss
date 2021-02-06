@@ -1,0 +1,170 @@
+main.info {
+  // カテゴリーパーツ
+  .cat-links {
+    margin-bottom: $mainConts-marginB;
+  }
+
+  a.cat-link-item {
+    display: inline-block;
+    padding: 5px 5px;
+    background: $theme-color;
+    color: #fff;
+    margin-right: 5px;
+  }
+  // カテゴリーパーツ
+
+  // タグパーツ
+  .tag-links {
+    display: flex;
+    font-weight: bold;
+
+    p {
+      margin-right: 20px;
+      margin-bottom: 0;
+      font-size: 18px;
+    }
+
+    li {
+      display: inline-block;
+      margin-right: 10px;
+      margin-bottom: 10px;     
+
+      a {
+        border-bottom: $dot-border-style;
+
+        &::before {
+          content: '# ';
+        }
+      }
+    }
+  }
+  // タグパーツ
+
+  // サイドカテゴリー
+  aside {
+    h2 {
+      border-bottom: none;
+      padding: 0;
+      margin-bottom: 10px;
+    }
+
+    a {
+      display: block;
+      padding: 20px 0 20px 10px;
+
+      transition: all .1s;
+
+      &:first-of-type {
+        border-top: $dot-border-style;
+      }
+
+      &:hover {
+        opacity: 1;
+        background: $theme-color;
+        color: #fff;
+      }
+    }
+  }
+  // サイドカテゴリー
+
+  // 投稿ページスタイル
+  .post {
+    h1 {
+      border-bottom: $dot-border-style;
+      margin-bottom: $mainConts-marginB;
+      text-align: left;
+      padding-bottom: 10px;
+    }
+  }
+
+  .post-content {
+    h2 {
+      border-bottom: none;
+      padding: 0;
+    }
+
+    h3 {
+      margin-bottom: 10px;
+    }
+
+    p > a {
+      border-bottom: $dot-border-style;
+    }
+
+    .youtube-wrap {
+      width: 100%;
+      height: 0;
+      position: relative;
+      padding-top: 56.25%;
+      overflow: hidden;
+      margin-bottom: $mainConts-marginB;
+    }
+    
+    .youtube-wrap iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100% !important;
+      height: 100% !important;
+    }
+
+    .img-wrapper {
+      a {
+        display: block;
+      }
+    }
+
+    & > :last-child {
+      margin-bottom: 0;
+    }
+  }
+  // 投稿ページスタイル
+}
+
+@media (min-width: 600px) {
+  main.info {
+
+    // 投稿ページスタイル
+    .post-content {
+      .img-wrapper {
+        display: flex;
+        justify-content: space-between;
+
+        a {
+          // margin-right: 10px;
+          flex-basis: 49%;
+
+          &:last-of-type {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+    // 投稿ページスタイル
+  }
+}
+
+@media (min-width: 920px) {
+  main.info {
+    .entry-container {
+      display: flex;
+      
+      & > section:first-of-type {
+        margin-right: 60px;
+        flex-basis: 650px;
+      }
+
+      & > section:last-of-type {
+        flex-grow: 1;
+      }
+    }
+  }
+}
+
+@media (min-width: 920px) {
+  main.info {
+    .box {
+      padding-bottom: 0;
+    }
+  }
+}

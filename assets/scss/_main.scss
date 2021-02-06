@@ -1,0 +1,161 @@
+main {
+  padding: $main-padding-top 16px 100px;
+  box-sizing: border-box;
+  // background: pink;
+
+  h1 {
+    font-size: 25px;
+    margin: 0;
+    margin-bottom: $mainConts-marginB;
+  }
+
+  h2 {
+    font-size: 18px;
+    margin: 0;
+    padding-bottom: 10px;
+    border-bottom: $border-style;
+    margin-bottom: $mainConts-marginB;
+  }
+
+  h3 {
+    font-size: $font-size;
+    margin: 0;
+    margin-bottom: $mainConts-marginB;
+  }
+
+  p {
+    margin-bottom: $mainConts-marginB;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    margin-bottom: $mainConts-marginB;
+  }
+
+  .box {
+    padding-bottom: 100px;
+  
+    & > :last-child {
+      margin-bottom: 0;
+    }
+  
+    &:last-of-type {
+      padding-bottom: 0;
+    }
+  }
+
+  // ギャラリー設定
+  .photo {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(100px, 1fr));
+    column-gap: 1px;
+    row-gap: 1px;
+    margin-bottom: $mainConts-marginB;
+
+    a {
+      display: block;
+    }
+
+    img {
+      margin-bottom: 0;
+    }
+  }
+
+  // 投稿表示設定
+  .entry {
+    .entry-item {
+      border-bottom: $dot-border-style;
+      margin-bottom: $mainConts-marginB;
+
+      p {
+        margin-bottom: 10px;
+      }
+  
+      img {
+        margin-bottom: 0;
+      }
+  
+      a.entry-item-img {
+        display: block;
+        margin-bottom: 10px;
+      }
+  
+      h3 {
+        margin: 0;
+        margin-bottom: 5px;
+      }
+    }
+
+    .more {
+      display: block;
+      background: $font-color;
+      color: #fff;
+      text-align: center;
+      padding: 10px 0;
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+  // 投稿表示設定
+}
+
+@media (min-width: 600px) {
+  main {
+    padding-top: $main-padding-top-b;
+
+    h1 {
+      text-align: center;
+      margin-bottom: 100px;
+    }
+
+    // ギャラリー設定
+    .photo {
+      grid-template-columns: repeat(3, minmax(100px, 1fr));
+    }
+
+    // 投稿表示設定
+    .entry {
+      .entry-item {
+        display: flex;
+        padding-bottom: 10px;
+
+        a.entry-item-img {
+          margin-right: 10px;
+          margin-bottom: 0;
+          align-self: flex-start;
+
+          img {
+            width: 230px;
+          }
+        }
+
+        .entry-wrap {
+          p {
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+    // 投稿表示設定
+  }
+}
+
+@media (min-width: 920px) {
+  main {
+    width: 900px;
+    margin: 0 auto;
+    // box-sizing: content-box;
+  }
+}
+
+@media (min-width: 1320px) {
+  main {
+    box-sizing: content-box;
+    padding-top: calc(#{$main-padding-top-b} - #{$header-hieght-b});
+    padding-left: 350px;
+    padding-right: 70px;
+  }
+}

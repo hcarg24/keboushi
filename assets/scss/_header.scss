@@ -1,0 +1,187 @@
+header {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  padding: $header-padding-v 16px;
+  background: #fff;
+  box-sizing: border-box;
+  box-shadow: 0 0 5px 0 rgba(26, 26, 26, .5);
+  opacity: 0.9;
+
+  // .logo {
+  //   display: flex;
+  //   align-items: center;
+
+  //   img {
+  //     width: $logo-width;
+  //     vertical-align: bottom;
+  //   }
+
+  //   p.logo-text {
+  //     margin: 0;
+  //     padding-left: 25px;
+  //     // font-size: 15px;
+  //     white-space: nowrap;
+  //   }
+  // }
+
+  .sp-menu {
+    margin-left: auto;
+
+    #open {
+      font-size: $menu-buttom-size;
+      cursor: pointer;
+      vertical-align: bottom;
+
+      &.hide {
+        display: none;
+      }
+    }
+  }
+
+  .pc-menu {
+    display: none;
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.95);
+  text-align: center;
+  padding: 64px;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
+
+  transition: opacity .6s;
+
+  &.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  #close {
+    position: absolute;
+    top: $close-top; // 本番のlogoと調節すること
+    right: 16px;
+    font-size: $menu-buttom-size;
+    cursor: pointer;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    margin-top: 24px;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity .3s, transform .3s;
+  }
+
+  &.show li {
+    opacity: 1;
+    transform: none;
+  }
+
+  @for $i from 1 through 5 { // メニューの数
+    &.show li:nth-child(#{$i}) {
+      transition-delay: #{$i / 10}s;
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  header {
+    .logo {
+      img {
+        width: $logo-width-b;
+      }
+
+      p.logo-text {
+        font-size: $font-size + 3;
+      }
+    }
+  }
+
+  .overlay {
+    #close {
+      top: $close-top-b;
+    }
+  }
+}
+
+@media (min-width: 920px) {
+  header {
+    padding: 16px 40px;
+  }
+
+  .overlay {
+    #close {
+      right: 40px;
+    }
+  }
+}
+
+@media (min-width: 1320px) {
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100vh;
+    padding: 50px 48px 80px 48px;
+
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .pc-menu {
+      display: block;
+
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      li {
+        margin-top: 24px;
+      }
+
+      a {
+        display: inline-block;
+        font-weight: bold;
+        border-bottom: $dot-border-style;
+        padding-bottom: 5px;
+      }
+    }
+
+    .sp-menu {
+      display: none;
+    }
+
+    .logo {
+      flex-direction: column;
+      text-align: center;
+
+      img {
+        width: 70%;
+      }
+      
+      p.logo-text {
+        padding: 20px 0 0 0;
+      }
+    }
+  }
+}

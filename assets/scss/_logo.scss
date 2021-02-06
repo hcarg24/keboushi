@@ -1,0 +1,16 @@
+.logo {
+  display: flex;
+  align-items: center;
+
+  img {
+    width: $logo-width;
+    vertical-align: bottom;
+  }
+
+  p.logo-text {
+    margin: 0;
+    padding-left: 25px;
+    // font-size: 15px;
+    white-space: nowrap;
+  }
+}

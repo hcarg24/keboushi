@@ -1,0 +1,41 @@
+$font-color: rgb(26, 26, 26);
+$font-size: 16px;
+$dot-border-style: 1px dotted $font-color;
+$border-style: 1px solid $font-color;
+$theme-hue: 187;
+$theme-color: hsl($theme-hue, 63%, 36%);
+// $sub-border-style: 1px dotted  rgba(26, 26, 26, 0.3);
+// $logo-color: rgba(41, 167, 222, 0.7);
+
+
+// メニューボタン回りの設定
+
+$menu-buttom-size: 32px; // メニューボタンのサイズ
+$logo-origin-w: 300; // ロゴオリジナルサイズ幅
+$logo-origin-h: 297; // ロゴオリジナルサイズ高さ
+$logo-width: 50px; // ロゴに実際設定する幅
+$logo-width-b: 80px;
+
+$logo-height: calc(#{$logo-width} * #{$logo-origin-h} / #{$logo-origin-w}); // ロゴの実際の高さ計算
+$close-top: calc((#{$logo-height} - #{$menu-buttom-size}) / 2 + 16px); // closeボタンのトップからの高さ計算
+
+// ウィンドウ幅600px以上
+$logo-height-b: calc(#{$logo-width-b} * #{$logo-origin-h} / #{$logo-origin-w}); // ロゴの実際の高さ計算
+$close-top-b: calc((#{$logo-height-b} - #{$menu-buttom-size}) / 2 + 16px); // closeボタンのトップからの高さ計算
+
+// メニューボタン回りの設定ここまで
+
+// メインコンテンツ関係
+
+$padding-set: 50px;
+$padding-set-b: 100px;
+
+$header-padding-v: 16px; // ヘッダー上下padding
+$header-hieght: calc(#{$header-padding-v * 2} + #{$logo-height}); // ヘッダー高さ計算
+$header-hieght-b: calc(#{$header-padding-v * 2} + #{$logo-height-b}); // ヘッダー高さ計算(600～)
+$main-padding-top: calc(#{$header-hieght} + #{$padding-set}); // メインフレームpadding-top計算
+$main-padding-top-b: calc(#{$header-hieght-b} + #{$padding-set-b}); // メインフレームpadding-top計算(600～)
+
+$mainConts-marginB: 30px;
+
+$footerConts-marginB: 30px;

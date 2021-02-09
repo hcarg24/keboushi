@@ -12,16 +12,16 @@ $theme-color: hsl($theme-hue, 63%, 36%);
 
 $menu-buttom-size: 32px; // メニューボタンのサイズ
 $logo-origin-w: 300; // ロゴオリジナルサイズ幅
-$logo-origin-h: 297; // ロゴオリジナルサイズ高さ
+$logo-origin-h: 300; // ロゴオリジナルサイズ高さ
 $logo-width: 50px; // ロゴに実際設定する幅
 $logo-width-b: 80px;
 
 $logo-height: calc(#{$logo-width} * #{$logo-origin-h} / #{$logo-origin-w}); // ロゴの実際の高さ計算
-$close-top: calc((#{$logo-height} - #{$menu-buttom-size}) / 2 + 16px); // closeボタンのトップからの高さ計算
+$close-top: calc((#{$logo-height} - #{$menu-buttom-size}) / 2 + 10px); // closeボタンのトップからの高さ計算 10pxはヘッダー上下padding
 
 // ウィンドウ幅600px以上
 $logo-height-b: calc(#{$logo-width-b} * #{$logo-origin-h} / #{$logo-origin-w}); // ロゴの実際の高さ計算
-$close-top-b: calc((#{$logo-height-b} - #{$menu-buttom-size}) / 2 + 16px); // closeボタンのトップからの高さ計算
+$close-top-b: calc((#{$logo-height-b} - #{$menu-buttom-size}) / 2 + 10px); // closeボタンのトップからの高さ計算
 
 // メニューボタン回りの設定ここまで
 
@@ -30,7 +30,7 @@ $close-top-b: calc((#{$logo-height-b} - #{$menu-buttom-size}) / 2 + 16px); // cl
 $padding-set: 50px;
 $padding-set-b: 100px;
 
-$header-padding-v: 16px; // ヘッダー上下padding
+$header-padding-v: 10px; // ヘッダー上下padding
 $header-hieght: calc(#{$header-padding-v * 2} + #{$logo-height}); // ヘッダー高さ計算
 $header-hieght-b: calc(#{$header-padding-v * 2} + #{$logo-height-b}); // ヘッダー高さ計算(600～)
 $main-padding-top: calc(#{$header-hieght} + #{$padding-set}); // メインフレームpadding-top計算

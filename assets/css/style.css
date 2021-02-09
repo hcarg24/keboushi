@@ -966,6 +966,11 @@ main.archive .year-item li:last-of-type {
   margin-bottom: 0;
 }
 
+main.archive aside a:hover {
+  background: #1a1a1a;
+  color: #fff;
+}
+
 @media (min-width: 600px) {
   main.archive .year-link {
     -webkit-box-pack: center;

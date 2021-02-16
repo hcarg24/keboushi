@@ -23,6 +23,17 @@ main.archive {
       }
     }
   }
+
+  // サイドカテゴリー
+  aside {
+    a {
+      &:hover {
+        background: $font-color;
+        color: #fff;
+      }
+    }
+  }
+  // サイドカテゴリー
 }
 
 @media (min-width: 600px) {

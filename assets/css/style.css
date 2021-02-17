@@ -1,4 +1,12 @@
 @charset "UTF-8";
+/*
+Theme Name: keboushi
+Author: Hiromi Ogawa
+Description: 一般社団法人毛帽子事務所のWordPressテーマ
+Version: 1.0
+License: GNU General Public License v2 or later
+Lincense URI: http://www.gnu.org/license/gp1-2.0.html
+*/
 #loading {
   width: 100vw;
   height: 100vh;
@@ -85,6 +93,10 @@ body ul {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+body img {
+  height: auto;
 }
 
 body a {
@@ -416,8 +428,8 @@ main .box:last-of-type {
 main .photo {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(100px, 1fr))[2];
-      grid-template-columns: repeat(2, minmax(100px, 1fr));
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
   -webkit-column-gap: 1px;
           column-gap: 1px;
   row-gap: 1px;
@@ -467,6 +479,10 @@ main .entry .more:hover {
   opacity: 0.5;
 }
 
+main .wp-pagenavi {
+  text-align: center;
+}
+
 @media (min-width: 600px) {
   main {
     padding-top: calc(calc(20px + calc(80px * 300 / 300)) + 100px);
@@ -476,8 +492,8 @@ main .entry .more:hover {
     margin-bottom: 100px;
   }
   main .photo {
-    -ms-grid-columns: (minmax(100px, 1fr))[3];
-        grid-template-columns: repeat(3, minmax(100px, 1fr));
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
   }
   main .entry .entry-item {
     display: -webkit-box;
@@ -690,6 +706,7 @@ main.about .member-overlay .member-popup .profile p:nth-of-type(2) {
 }
 
 main.about .member-overlay .member-popup .profile p:nth-of-type(3) {
+  text-align: left;
   font-size: 14px;
 }
 
@@ -795,7 +812,7 @@ main.info .cat-links {
   margin-bottom: 30px;
 }
 
-main.info a.cat-link-item {
+main.info .cat-links a {
   display: inline-block;
   padding: 5px 5px;
   background: #228896;
@@ -816,17 +833,14 @@ main.info .tag-links p {
   font-size: 18px;
 }
 
-main.info .tag-links li {
+main.info .tag-links a {
   display: inline-block;
+  border-bottom: 1px dotted #1a1a1a;
   margin-right: 10px;
   margin-bottom: 10px;
 }
 
-main.info .tag-links li a {
-  border-bottom: 1px dotted #1a1a1a;
-}
-
-main.info .tag-links li a::before {
+main.info .tag-links a::before {
   content: '# ';
 }
 
@@ -890,8 +904,13 @@ main.info .post-content .youtube-wrap iframe {
   height: 100% !important;
 }
 
-main.info .post-content .img-wrapper a {
-  display: block;
+main.info .post-content figure {
+  margin: 0;
+  margin-bottom: 30px;
+}
+
+main.info .post-content figure img {
+  margin-bottom: 0;
 }
 
 main.info .post-content > :last-child {
@@ -907,12 +926,9 @@ main.info .post-content > :last-child {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  main.info .post-content .img-wrapper a {
+  main.info .post-content .img-wrapper figure {
     -ms-flex-preferred-size: 49%;
         flex-basis: 49%;
-  }
-  main.info .post-content .img-wrapper a:last-of-type {
-    margin-right: 0;
   }
 }
 
@@ -962,8 +978,9 @@ main.archive .year-item li {
   margin-bottom: 30px;
 }
 
-main.archive .year-item li:last-of-type {
-  margin-bottom: 0;
+main.archive aside a:hover {
+  background: #1a1a1a;
+  color: #fff;
 }
 
 @media (min-width: 600px) {

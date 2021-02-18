@@ -48,7 +48,7 @@ main {
   // ギャラリー設定
   .photo {
     display: grid;
-    grid-template-columns: repeat(2, minmax(100px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     column-gap: 1px;
     row-gap: 1px;
     margin-bottom: $mainConts-marginB;
@@ -100,6 +100,10 @@ main {
     }
   }
   // 投稿表示設定
+
+  .wp-pagenavi {
+    text-align: center;
+  }
 }
 
 @media (min-width: 600px) {
@@ -113,7 +117,7 @@ main {
 
     // ギャラリー設定
     .photo {
-      grid-template-columns: repeat(3, minmax(100px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
     }
 
     // 投稿表示設定

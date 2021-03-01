@@ -1,4 +1,12 @@
 @charset "UTF-8";
+/*
+Theme Name: keboushi
+Author: Hiromi Ogawa
+Description: 一般社団法人毛帽子事務所のWordPressテーマ
+Version: 1.03
+License: GNU General Public License v2 or later
+Lincense URI: http://www.gnu.org/license/gp1-2.0.html
+*/
 #loading {
   width: 100vw;
   height: 100vh;
@@ -87,6 +95,10 @@ body ul {
   margin: 0;
 }
 
+body img {
+  height: auto;
+}
+
 body a {
   color: #1a1a1a;
   text-decoration: none;
@@ -137,7 +149,7 @@ body input {
 
 header {
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   top: 0;
   left: 0;
   right: 0;
@@ -416,8 +428,8 @@ main .box:last-of-type {
 main .photo {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(100px, 1fr))[2];
-      grid-template-columns: repeat(2, minmax(100px, 1fr));
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
   -webkit-column-gap: 1px;
           column-gap: 1px;
   row-gap: 1px;
@@ -467,6 +479,10 @@ main .entry .more:hover {
   opacity: 0.5;
 }
 
+main .wp-pagenavi {
+  text-align: center;
+}
+
 @media (min-width: 600px) {
   main {
     padding-top: calc(calc(20px + calc(80px * 300 / 300)) + 100px);
@@ -476,8 +492,8 @@ main .entry .more:hover {
     margin-bottom: 100px;
   }
   main .photo {
-    -ms-grid-columns: (minmax(100px, 1fr))[3];
-        grid-template-columns: repeat(3, minmax(100px, 1fr));
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
   }
   main .entry .entry-item {
     display: -webkit-box;
@@ -533,15 +549,18 @@ main.about .works p {
 }
 
 main.about .works p:first-of-type {
-  font-size: 35px;
-  -ms-flex-preferred-size: 30%;
-      flex-basis: 30%;
-}
-
-main.about .works p:last-of-type {
+  font-size: 30px;
+  font-weight: bold;
   -ms-flex-preferred-size: 70%;
       flex-basis: 70%;
   text-align: center;
+}
+
+main.about .works p:last-of-type {
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 main.about .works:last-of-type {
@@ -562,6 +581,10 @@ main.about .works:nth-of-type(3) {
 
 main.about .works:nth-of-type(4) {
   background: #867ae1;
+}
+
+main.about .works.knit {
+  background: #e2be31;
 }
 
 main.about ul.member {
@@ -690,6 +713,7 @@ main.about .member-overlay .member-popup .profile p:nth-of-type(2) {
 }
 
 main.about .member-overlay .member-popup .profile p:nth-of-type(3) {
+  text-align: left;
   font-size: 14px;
 }
 
@@ -699,7 +723,7 @@ main.about .member-overlay .member-popup .profile p:last-of-type {
 
 main.about .member-overlay .member-popup .profile a {
   font-size: 26px;
-  display: block;
+  display: inline-block;
   text-align: center;
 }
 
@@ -713,6 +737,86 @@ main.about .member-overlay.member-hide {
     padding-left: 32px;
     padding-right: 32px;
   }
+}
+
+main.workspage .works {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 16px;
+  margin-bottom: 10px;
+}
+
+main.workspage .works p {
+  margin: 0;
+  color: #fff;
+}
+
+main.workspage .works p:first-of-type {
+  font-size: 20px;
+  font-weight: bold;
+  -ms-flex-preferred-size: 80%;
+      flex-basis: 80%;
+  margin-right: 16px;
+}
+
+main.workspage .works p:last-of-type {
+  -ms-flex-preferred-size: 20%;
+      flex-basis: 20%;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+main.workspage .works:last-of-type {
+  margin-bottom: 0;
+}
+
+main.workspage .works:nth-of-type(1) {
+  background: #2a83b7;
+}
+
+main.workspage .works:nth-of-type(2) {
+  background: #3773d2;
+}
+
+main.workspage .works:nth-of-type(3) {
+  background: #596ad9;
+}
+
+main.workspage .works:nth-of-type(4) {
+  background: #867ae1;
+}
+
+main.workspage .works.knit {
+  background: #e2be31;
+}
+
+@media (min-width: 600px) {
+  main.workspage .works {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  main.workspage .works p:first-of-type {
+    font-size: 30px;
+  }
+  main.workspage .works p:last-of-type {
+    font-size: 25px;
+  }
+}
+
+main.about_single h3 {
+  margin-bottom: 10px;
+}
+
+main.about_single h3::before {
+  content: '◆ ';
+}
+
+main.about_single p.work-text {
+  margin-left: 1em;
 }
 
 .s-wrap {
@@ -795,7 +899,7 @@ main.info .cat-links {
   margin-bottom: 30px;
 }
 
-main.info a.cat-link-item {
+main.info .cat-links a {
   display: inline-block;
   padding: 5px 5px;
   background: #228896;
@@ -816,17 +920,14 @@ main.info .tag-links p {
   font-size: 18px;
 }
 
-main.info .tag-links li {
+main.info .tag-links a {
   display: inline-block;
+  border-bottom: 1px dotted #1a1a1a;
   margin-right: 10px;
   margin-bottom: 10px;
 }
 
-main.info .tag-links li a {
-  border-bottom: 1px dotted #1a1a1a;
-}
-
-main.info .tag-links li a::before {
+main.info .tag-links a::before {
   content: '# ';
 }
 
@@ -890,8 +991,13 @@ main.info .post-content .youtube-wrap iframe {
   height: 100% !important;
 }
 
-main.info .post-content .img-wrapper a {
-  display: block;
+main.info .post-content figure {
+  margin: 0;
+  margin-bottom: 30px;
+}
+
+main.info .post-content figure img {
+  margin-bottom: 0;
 }
 
 main.info .post-content > :last-child {
@@ -899,6 +1005,9 @@ main.info .post-content > :last-child {
 }
 
 @media (min-width: 600px) {
+  main.info .cat-links {
+    margin-bottom: 0;
+  }
   main.info .post-content .img-wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -907,12 +1016,9 @@ main.info .post-content > :last-child {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  main.info .post-content .img-wrapper a {
+  main.info .post-content .img-wrapper figure {
     -ms-flex-preferred-size: 49%;
         flex-basis: 49%;
-  }
-  main.info .post-content .img-wrapper a:last-of-type {
-    margin-right: 0;
   }
 }
 
@@ -962,8 +1068,9 @@ main.archive .year-item li {
   margin-bottom: 30px;
 }
 
-main.archive .year-item li:last-of-type {
-  margin-bottom: 0;
+main.archive aside a:hover {
+  background: #1a1a1a;
+  color: #fff;
 }
 
 @media (min-width: 600px) {

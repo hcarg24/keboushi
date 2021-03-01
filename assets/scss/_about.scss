@@ -12,13 +12,17 @@ main.about {
       // line-height: 1;
     
       &:first-of-type {
-        font-size: 35px;
-        flex-basis: 30%;
+        font-size: 30px;
+        font-weight: bold;
+        flex-basis: 70%;
+        text-align: center;
       }
     
       &:last-of-type {
-        flex-basis: 70%;
-        text-align: center;
+        flex-basis: 30%;
+        font-size: $font-size + 2;
+        font-weight: bold;
+        // text-align: center;
       }
     }
 
@@ -31,6 +35,10 @@ main.about {
     .works:nth-of-type(#{$i}) {
       background: hsl($theme-hue + $i * 15, 63%, 36 + $i * 8%);
     }
+  }
+
+  .works.knit {
+    background: #e2be31;
   }
 
   ul.member {
@@ -152,6 +160,7 @@ main.about {
           }
 
           &:nth-of-type(3) {
+            text-align: left;
             font-size: $font-size - 2;
           }
 
@@ -162,7 +171,7 @@ main.about {
 
         a {
           font-size: $font-size + 10;
-          display: block;
+          display: inline-block;
           text-align: center;
         }
       }

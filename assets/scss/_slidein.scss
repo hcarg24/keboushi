@@ -1,7 +1,17 @@
 .slideConts {
   transform: translate(-100px, 0);
   opacity: 0;
-  transition: all .3s;
+  // transition: all .3s;
+  transition-property: all;
+  transition-duration: .3s;
+  // transition-delay: 1s;
+
+
+  @for $i from 1 through 5 { // メニューの数
+    &:nth-of-type(#{$i}) {
+      transition-delay: #{$i / 10 + 0.5}s;
+    }
+  }
 
   &.active {
     opacity: 1;

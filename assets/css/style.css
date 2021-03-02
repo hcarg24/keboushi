@@ -263,6 +263,11 @@ header .pc-menu {
           transition-delay: 0.5s;
 }
 
+.overlay.show li:nth-child(6) {
+  -webkit-transition-delay: 0.6s;
+          transition-delay: 0.6s;
+}
+
 @media (min-width: 600px) {
   .overlay #close {
     top: calc((calc(80px * 300 / 300) - 32px) / 2 + 10px);
@@ -285,7 +290,7 @@ header .pc-menu {
     left: 0;
     width: 280px;
     height: 100vh;
-    padding: 50px 48px 80px 48px;
+    padding: 50px 48px 40px 48px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -743,10 +748,14 @@ main.workspage .works {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 16px;
+  padding: 10px;
   margin-bottom: 10px;
 }
 
@@ -756,18 +765,17 @@ main.workspage .works p {
 }
 
 main.workspage .works p:first-of-type {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: bold;
   -ms-flex-preferred-size: 80%;
       flex-basis: 80%;
-  margin-right: 16px;
+  margin-bottom: 10px;
 }
 
 main.workspage .works p:last-of-type {
   -ms-flex-preferred-size: 20%;
       flex-basis: 20%;
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 14px;
 }
 
 main.workspage .works:last-of-type {
@@ -794,16 +802,40 @@ main.workspage .works.knit {
   background: #e2be31;
 }
 
+main.workspage .works.knit p {
+  color: #1a1a1a;
+}
+
+main.workspage .works.knit p:first-of-type {
+  margin-bottom: 0;
+}
+
 @media (min-width: 600px) {
   main.workspage .works {
-    padding-left: 32px;
-    padding-right: 32px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
   main.workspage .works p:first-of-type {
-    font-size: 30px;
+    font-size: 21px;
+    margin-bottom: 0;
+    font-weight: normal;
   }
   main.workspage .works p:last-of-type {
-    font-size: 25px;
+    font-size: 19px;
+  }
+}
+
+@media (min-width: 920px) {
+  main.workspage .works {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  main.workspage .works p:first-of-type {
+    font-size: 29px;
   }
 }
 
@@ -1151,8 +1183,35 @@ main.contact .form input, main.contact .form textarea, main.contact .form button
   -webkit-transform: translate(-100px, 0);
           transform: translate(-100px, 0);
   opacity: 0;
-  -webkit-transition: all .3s;
-  transition: all .3s;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: .3s;
+          transition-duration: .3s;
+}
+
+.slideConts:nth-of-type(1) {
+  -webkit-transition-delay: 0.6s;
+          transition-delay: 0.6s;
+}
+
+.slideConts:nth-of-type(2) {
+  -webkit-transition-delay: 0.7s;
+          transition-delay: 0.7s;
+}
+
+.slideConts:nth-of-type(3) {
+  -webkit-transition-delay: 0.8s;
+          transition-delay: 0.8s;
+}
+
+.slideConts:nth-of-type(4) {
+  -webkit-transition-delay: 0.9s;
+          transition-delay: 0.9s;
+}
+
+.slideConts:nth-of-type(5) {
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
 }
 
 .slideConts.active {

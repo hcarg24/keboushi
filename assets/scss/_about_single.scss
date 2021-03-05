@@ -1,26 +1,13 @@
-// main.about_single {
+main.about_single {
+  h3 {
+    margin-bottom: 10px;
 
-//   .photo {
-//     display: grid;
-//     grid-template-columns: repeat(2, minmax(100px, 1fr));
-//     column-gap: 1px;
-//     row-gap: 1px;
-//     margin-bottom: $mainConts-marginB;
+    &::before {
+      content: '◆ ';
+    }
+  }
 
-//     a {
-//       display: block;
-//     }
-
-//     img {
-//       margin-bottom: 0;
-//     }
-//   }
-// }
-
-// @media (min-width: 600px) {
-//   main.about_single {
-//     .photo {
-//       grid-template-columns: repeat(3, minmax(100px, 1fr));
-//     }
-//   }
-// }
+  p.work-text {
+    margin-left: 1em;
+  }
+}

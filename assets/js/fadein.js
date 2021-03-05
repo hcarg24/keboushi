@@ -3,11 +3,11 @@
 {
   window.onload = function() {
     scroll_effect();
-    slide_effect();
+    // slide_effect();
   
     $(window).scroll(function(){
      scroll_effect();
-     slide_effect();
+    //  slide_effect();
     });
   
     function scroll_effect(){
@@ -21,18 +21,18 @@
      });
     }
 
-    function slide_effect(){
-     $('.slideConts').each(function(){
-      let elemPos = $(this).offset().top;
-      let scroll = $(window).scrollTop();
-      let windowHeight = $(window).height();
-      if (scroll > elemPos - windowHeight + 150){
-       $(this).addClass('active');
-      } else {
-        $(this).removeClass('active');
-      }      
-     });
-    }
+    // function slide_effect(){
+    //  $('.slideConts').each(function(){
+    //   let elemPos = $(this).offset().top;
+    //   let scroll = $(window).scrollTop();
+    //   let windowHeight = $(window).height();
+    //   if (scroll > elemPos - windowHeight + 150){
+    //    $(this).addClass('active');
+    //   } else {
+    //     $(this).removeClass('active');
+    //   }      
+    //  });
+    // }
   };
 }
 

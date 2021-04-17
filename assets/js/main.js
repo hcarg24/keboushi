@@ -89,3 +89,16 @@
 //     boxes[i].classList.add('effect-fade');
 //   }
 // }
+
+// worksページ横スライド設定
+{
+  const slideConts = document.querySelectorAll('.slideConts');
+
+  console.log(slideConts);
+
+  window.addEventListener('load', () => {
+    for (let i = 0; i < slideConts.length; i++) {
+      slideConts[i].classList.add('active');
+    }
+  });
+}

@@ -2,15 +2,16 @@ main.info {
   // カテゴリーパーツ
   .cat-links {
     margin-bottom: $mainConts-marginB;
+    
+    a {
+      display: inline-block;
+      padding: 5px 5px;
+      background: $theme-color;
+      color: #fff;
+      margin-right: 5px;
+    }
   }
 
-  a.cat-link-item {
-    display: inline-block;
-    padding: 5px 5px;
-    background: $theme-color;
-    color: #fff;
-    margin-right: 5px;
-  }
   // カテゴリーパーツ
 
   // タグパーツ
@@ -24,14 +25,16 @@ main.info {
       font-size: 18px;
     }
 
-    li {
-      display: inline-block;
-      margin-right: 10px;
-      margin-bottom: 10px;     
+    div {
+      display: flex;
+      flex-wrap: wrap;
 
       a {
+        display: block;
         border-bottom: $dot-border-style;
-
+        margin-right: 10px;
+        margin-bottom: 10px;
+  
         &::before {
           content: '# ';
         }
@@ -108,9 +111,12 @@ main.info {
       height: 100% !important;
     }
 
-    .img-wrapper {
-      a {
-        display: block;
+    figure {
+      margin: 0;
+      margin-bottom: $mainConts-marginB;
+
+      img {
+        margin-bottom: 0;
       }
     }
 
@@ -124,20 +130,28 @@ main.info {
 @media (min-width: 600px) {
   main.info {
 
+    .cat-links {
+      margin-bottom: 0;
+    }
+
     // 投稿ページスタイル
     .post-content {
       .img-wrapper {
         display: flex;
         justify-content: space-between;
 
-        a {
-          // margin-right: 10px;
+        figure {
           flex-basis: 49%;
-
-          &:last-of-type {
-            margin-right: 0;
-          }
         }
+
+        // a {
+        //   // margin-right: 10px;
+        //   flex-basis: 49%;
+
+        //   &:last-of-type {
+        //     margin-right: 0;
+        //   }
+        // }
       }
     }
     // 投稿ページスタイル
